@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <None Include="..\..\CubeRunner.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{9A754822-4BCE-4F17-BB6D-5853682945C6}</UniqueIdentifier>
+      <UniqueIdentifier>{2CDED59A-59BF-4885-A9B6-078E4B29224B}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\CubeRunner.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{1BEB01E0-38F2-4DCF-89D5-1139A70EF8F3}</UniqueIdentifier>
+      <UniqueIdentifier>{F6E8C820-C505-436A-81C3-C250F0952157}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -27,19 +27,19 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Config\Android">
-      <UniqueIdentifier>{5F7620BF-4179-417F-AA2B-A09CCAB3137B}</UniqueIdentifier>
+      <UniqueIdentifier>{EC7FCBD9-A1F2-4B86-9314-17BE6A6A82F9}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\Android\AndroidEngine.ini">
       <Filter>Config\Android</Filter>
     </None>
     <Filter Include="Config\IOS">
-      <UniqueIdentifier>{0B531547-DF90-46F9-8C16-46D61105DE02}</UniqueIdentifier>
+      <UniqueIdentifier>{2E2592E9-29F9-4220-99C1-768A57E80545}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\IOS\IOSEngine.ini">
       <Filter>Config\IOS</Filter>
     </None>
     <Filter Include="Source\CubeRunner">
-      <UniqueIdentifier>{6C1DEB62-9397-447F-BA2B-88B83BA616F0}</UniqueIdentifier>
+      <UniqueIdentifier>{72DA52DE-2810-493B-8666-41AA7583B343}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\CubeRunner\BaseAdvancedPlayerPawn.cpp">
       <Filter>Source\CubeRunner</Filter>
@@ -170,17 +170,13 @@
     <ClInclude Include="..\..\Source\CubeRunner\EndLevelPawn.h">
       <Filter>Source\CubeRunner</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\CubeRunner\Utility.h">
-      <Filter>Source\CubeRunner</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="..\..\Source\CubeRunner\GameDataAssets.cpp">
       <Filter>Source\CubeRunner</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="..\..\Source\CubeRunner\GameDataAssets.h">
+      <Filter>Source\CubeRunner</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\CubeRunner\Utility.h">
       <Filter>Source\CubeRunner</Filter>
     </ClInclude>
   </ItemGroup>

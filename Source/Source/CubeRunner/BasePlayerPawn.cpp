@@ -40,8 +40,8 @@ ABasePlayerPawn::ABasePlayerPawn( const FObjectInitializer& ObjectInitializer )
 	, TouchingWallPiece( false )
 	, CurrentUpgrade( EUpgradeType::EUT_UPGRADE_NONE )
 	, UpgradeTimer( 0.0f )
-	, PreviousForwardSpeed( 0.0f )
 	, Damping( 0.6f )
+	, PreviousForwardSpeed( 0.0f )
 	, StartTimer( -1.0f )
 	, TotalDistanceTravelled( 0.0f )
 	, RotationRateSensitivity( 0.005f )
@@ -58,7 +58,7 @@ ABasePlayerPawn::ABasePlayerPawn( const FObjectInitializer& ObjectInitializer )
 	Mesh = CreateDefaultSubobject<UStaticMeshComponent>( TEXT( "Mesh" ) );
 	Mesh->SetupAttachment( Root );
 	Mesh->bMultiBodyOverlap = true;
-	Mesh->bGenerateOverlapEvents = true;
+	Mesh->SetGenerateOverlapEvents( true );
 	Mesh->SetCollisionEnabled( ECollisionEnabled::QueryAndPhysics );
 	CameraBoom = CreateDefaultSubobject<USpringArmComponent>( TEXT( "CameraBoom" ) );
 	CameraBoom->SetupAttachment( Mesh );
@@ -359,7 +359,7 @@ void ABasePlayerPawn::BeginTurn( ABaseTurnFloorPiece* TurnPiece )
 
 void ABasePlayerPawn::Explode( bool force /*= false*/ )
 {
-	if( force || bCanBeDamaged )
+	if( force || this->CanBeDamaged() )
 	{	
 		// Can only lose once & cannot lose after you have won!
 		if( IsAlive )

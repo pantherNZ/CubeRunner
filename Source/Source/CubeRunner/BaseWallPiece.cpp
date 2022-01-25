@@ -24,7 +24,7 @@ ABaseWallPiece::ABaseWallPiece( const FObjectInitializer& ObjectInitializer )
 	WallCollision = CreateDefaultSubobject<UBoxComponent>( TEXT( "Spawn Collision" ) );
 	WallCollision->AttachToComponent( Root, FAttachmentTransformRules::KeepRelativeTransform );
 	WallCollision->SetCollisionEnabled( ECollisionEnabled::QueryOnly );
-	WallCollision->bGenerateOverlapEvents = true;
+	WallCollision->SetGenerateOverlapEvents( true );
 }
 
 // Called when the game starts or when spawned

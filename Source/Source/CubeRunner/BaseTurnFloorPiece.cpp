@@ -11,7 +11,7 @@ ABaseTurnFloorPiece::ABaseTurnFloorPiece( const FObjectInitializer& ObjectInitia
 	TurnZone = CreateDefaultSubobject<UBoxComponent>( TEXT( "Turn Zone" ) );
 	TurnZone->AttachToComponent( Root, FAttachmentTransformRules::KeepRelativeTransform );
 	TurnZone->SetCollisionEnabled( ECollisionEnabled::QueryOnly );
-	TurnZone->bGenerateOverlapEvents = true;
+	TurnZone->SetGenerateOverlapEvents( true );
 
 	TurnStartPoint = CreateDefaultSubobject<UArrowComponent>( TEXT( "Turn Start Point" ) );
 	TurnStartPoint->AttachToComponent( Root, FAttachmentTransformRules::KeepRelativeTransform );

@@ -15,14 +15,14 @@
 ABaseRandomisedFloorPiece::ABaseRandomisedFloorPiece( const FObjectInitializer& ObjectInitializer )
 	: Super( ObjectInitializer )
 	, DensityVariation( 30 )
+	, HorizontalUpdateWidth( 400.0f )
 	, MoveThresholdMin( 0.0f )
 	, MoveThresholdMax( 0.0f )
-	, HorizontalUpdateWidth( 400.0f )
 {
 	EndCollision = CreateDefaultSubobject< UBoxComponent >( TEXT( "End Collision" ) );
 	EndCollision->AttachToComponent( FloorMesh, FAttachmentTransformRules::KeepRelativeTransform );
 	EndCollision->SetCollisionEnabled( ECollisionEnabled::QueryOnly );
-	EndCollision->bGenerateOverlapEvents = true;
+	EndCollision->SetGenerateOverlapEvents( true );
 }
 
 void ABaseRandomisedFloorPiece::BeginPlay()

@@ -209,7 +209,7 @@ void ACubeRunnerGameMode::Tick( float DeltaTime )
 			auto Dist = FVector::DotProduct( ( PlayerRef->GetActorLocation() - FloorPiece2->FloorMesh->GetComponentLocation() ), AlignedRightVector );
 
 			auto Pos = FloorPiece2->FloorMesh->GetComponentLocation();
-			auto XOffset = FloorPiece2->GetActorForwardVector() * FloorPiece2->FloorMesh->RelativeLocation.X * 2.0f;
+			auto XOffset = FloorPiece2->GetActorForwardVector() * FloorPiece2->FloorMesh->GetRelativeLocation().X * 2.0f;
 			auto RightOffset = AlignedRightVector * Dist;
 
 			FloorPiece1->MoveFloor( Pos + RightOffset + XOffset, RightOffset.Size() * FMath::Sign( Dist ) );

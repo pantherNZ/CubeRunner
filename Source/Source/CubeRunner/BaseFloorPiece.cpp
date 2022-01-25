@@ -29,19 +29,19 @@ TArray< TArray < int32 > > ABaseFloorPiece::BinomialLookUpTable;
 // Sets default values
 ABaseFloorPiece::ABaseFloorPiece( const FObjectInitializer& ObjectInitializer )
 	: Super( ObjectInitializer )
-	, CoolDownCounter( 0 )
-	, CoolDownLength( 0 )
 	, PieceFamily( EPieceFamily::EPF_RANDOMISED )
-	, UpgradeActor( nullptr )
+	, CoolDownLength( 0 )
 	, TransitionPiece( false )
-	, ConstructionScriptRun( false )
 	, Variation( 0 )
 	, MaxVariationClassic( 0 )
 	, MaxVariationAdvanced( 0 )
-	, InstancedObstacleData( TMap< UStaticMesh*, FInstancedObstacleDataContainer >() )
-	, SpawnedChildObstacles( TArray< FChildObstacle >() )
-	, HasTriggered( false )
+	, UpgradeActor( nullptr )
 	, EndLevelPiece( false )
+	, SpawnedChildObstacles( TArray< FChildObstacle >() )
+	, InstancedObstacleData( TMap< UStaticMesh*, FInstancedObstacleDataContainer >() )
+	, CoolDownCounter( 0 )
+	, ConstructionScriptRun( false )
+	, HasTriggered( false )
 {
 	PrimaryActorTick.bCanEverTick = true;
 
@@ -63,12 +63,12 @@ ABaseFloorPiece::ABaseFloorPiece( const FObjectInitializer& ObjectInitializer )
 	SpawnCollison = CreateDefaultSubobject<UBoxComponent>( TEXT( "Spawn Collision" ) );
 	SpawnCollison->AttachToComponent( FloorMesh, FAttachmentTransformRules::KeepRelativeTransform );
 	SpawnCollison->SetCollisionEnabled( ECollisionEnabled::QueryOnly );
-	SpawnCollison->bGenerateOverlapEvents = true;
+	SpawnCollison->SetGenerateOverlapEvents( true );
 
 	UpgradeSpawnZone = CreateDefaultSubobject<UBoxComponent>( TEXT( "Upgade Spawn Zone" ) );
 	UpgradeSpawnZone->AttachToComponent( Root, FAttachmentTransformRules::KeepRelativeTransform );
 	UpgradeSpawnZone->SetCollisionEnabled( ECollisionEnabled::NoCollision );
-	UpgradeSpawnZone->bGenerateOverlapEvents = false;
+	UpgradeSpawnZone->SetGenerateOverlapEvents( false );
 	UpgradeSpawnZone->SetWorldScale3D( FVector( 0.0f, 0.0f, 0.0f ) );
 }
 
