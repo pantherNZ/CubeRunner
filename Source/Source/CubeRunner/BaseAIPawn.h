@@ -11,7 +11,9 @@ struct PathNode
 	PathNode* CameFrom;
 	FVector Location;
 	
-	PathNode( FVector Pos ) : Location( Pos ), CameFrom( nullptr ) 
+	PathNode( FVector Pos ) 
+		: CameFrom( nullptr )
+		, Location( Pos )
 	{ 
 	}
 };

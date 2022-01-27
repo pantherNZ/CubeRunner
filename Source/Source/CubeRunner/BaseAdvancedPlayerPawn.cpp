@@ -7,12 +7,12 @@
 
 ABaseAdvancedPlayerPawn::ABaseAdvancedPlayerPawn( const class FObjectInitializer& ObjectInitializer )
 	: Super( ObjectInitializer )
-	, JumpVelocity( 1000.0f )
-	, JumpCooldownMs( 4000.0f )
+	, AddedForwardMaxSpeed( 500.0f )
 	, AddedForwardVelocity( 0.0f )
 	, AddedForwardFriction( 0.98f )
 	, AddedForwardAcceleration( 3000.0f )
-	, AddedForwardMaxSpeed( 500.0f )
+	, JumpVelocity( 1000.0f )
+	, JumpCooldownMs( 4000.0f )
 {
 
 }

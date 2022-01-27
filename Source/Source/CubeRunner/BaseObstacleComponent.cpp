@@ -8,11 +8,11 @@
 // Sets default values
 UBaseObstacleComponent::UBaseObstacleComponent( const FObjectInitializer& ObjectInitializer )
 	: Super( ObjectInitializer )
+	, WaypointIndex( 0 )
 	, MovementSpeed( 0.0f )
 	, RotateTowardsTarget( false )
-	, MovementStyle( EMovementStyle::EMS_NONE )
-	, WaypointIndex( 0 )
 	, MinRequiredDistanceToWaypoint( 5.0f )
+	, MovementStyle( EMovementStyle::EMS_NONE )
 	, ReplaceWithCorrectEdgeObstacle( false )
 {
 	PrimaryComponentTick.bCanEverTick = true;
